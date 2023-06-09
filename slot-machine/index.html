@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .container{
+      height:200px;
+      width:600px;
+      background:white;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      border: 5px solid black;
+    }
+    .slot{
+      height: 180px;
+      width:180px;
+      background-color: red;
+      border: 5px solid black;
+      position:relative;
+      overflow: hidden;
+    }
+    .slot-roll{
+      position:absolute;
+      background-image: url('./download.png');
+      background-size: contain;
+      height: 600%;
+      width:100%;
+      left:0;
+      bottom: 100%;
+    }
+    .slot{
+      background-image: url('./download.png');
+      background-size: contain;
+    }
+    .animation{
+      animation-name:  animation-play;
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+    @keyframes animation-play{
+      0%{
+        transform: translateY(0);
+      }
+      100%{
+        transform: translateY(100%);
+      }
+    }
+    button{
+      margin-top: 100px;
+      font-size: 50px;
+      font-weight: 600;
+      text-transform: lowercase;
+      padding: 10px 15px;
+      width:200px;
+      border-radius: 10%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+      <div class="slot">
+        <div class="slot-roll"></div>
+      </div>
+      <div class="slot">
+        <div class="slot-roll"></div>
+      </div>
+      <div class="slot">
+        <div class="slot-roll"></div>
+      </div>
+    
+  </div>
+  <button onclick="roll()">Roll</button>
+</body>
+<script src="script.js"></script>
+</html>
+
